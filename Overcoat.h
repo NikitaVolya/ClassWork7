@@ -1,8 +1,5 @@
 #pragma once
 
-#include <conio.h>
-#include <iostream>
-
 class Overcoat
 {
 private:
@@ -24,7 +21,7 @@ public:
 	void setPrice(float pPrice);
 
 	bool operator==(const Overcoat& pOther) const;
-	const Overcoat& operator=(const Overcoat& pOther);
+	Overcoat& operator=(const Overcoat& pOther);
 
 	bool operator>(const Overcoat& pOther) const { return price > pOther.price; }
 	bool operator>=(const Overcoat& pOther) const { return price >= pOther.price; }

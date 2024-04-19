@@ -1,5 +1,8 @@
 #include "Overcoat.h"
 
+#include <conio.h>
+#include <iostream>
+
 Overcoat::~Overcoat()
 {
 	if (producer)
@@ -61,7 +64,7 @@ bool Overcoat::operator==(const Overcoat& pOther) const
 	return size == pOther.size && price == pOther.price;
 }
 
-const Overcoat& Overcoat::operator=(const Overcoat& pOther)
+Overcoat& Overcoat::operator=(const Overcoat& pOther)
 {
 	if (this == &pOther)
 		return *this;

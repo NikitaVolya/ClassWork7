@@ -1,8 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <conio.h>
-
 class Flat
 {
 private:
@@ -26,7 +23,7 @@ public:
 	void setPrice(float pPrice);
 	void setFamily(const char* pString);
 
-	const Flat& operator=(const Flat& pOther);
+	Flat& operator=(const Flat& pOther);
 
 	bool operator==(const Flat& pOther) const { return area == pOther.area; };
 	bool operator>(const Flat& pOther) const { return price > pOther.price; }

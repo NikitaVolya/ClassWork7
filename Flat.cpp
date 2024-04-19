@@ -1,5 +1,8 @@
 #include "Flat.h"
 
+#include <iostream>
+#include <conio.h>
+
 Flat::Flat(int pStage, float pArea, float pPrice, const char* pFamily) : stage(pStage), area(1.f), price(0.f), family(nullptr)
 {
 	setArea(pArea);
@@ -58,7 +61,7 @@ void Flat::setFamily(const char* pString)
 	strcpy_s(family, stringLength, pString);
 }
 
-const Flat& Flat::operator=(const Flat& pOther)
+Flat& Flat::operator=(const Flat& pOther)
 {
 	if (this == &pOther)
 		return *this;

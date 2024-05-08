@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 class Overcoat
 {
 private:
@@ -10,6 +12,7 @@ private:
 public:
 	Overcoat(const char* pProducer, int pSize, float pPrice) : producer(nullptr), size(38), price(0.f) { setProducer(pProducer); setSize(pSize); setPrice(pPrice); }
 	Overcoat(const Overcoat& pOther) : Overcoat(pOther.producer, pOther.size, pOther.price) {}
+	Overcoat(Overcoat&& pOther);
 	~Overcoat();
 
 	const char* getProducer() const { return producer; }
@@ -27,5 +30,7 @@ public:
 	bool operator>=(const Overcoat& pOther) const { return price >= pOther.price; }
 	bool operator<(const Overcoat& pOther) const { return price < pOther.price; }
 	bool operator<=(const Overcoat& pOther) const { return price <= pOther.price; }
+
+	friend std::ostream& operator<<(std::ostream& out, Overcoat& overcoat);
 };
 

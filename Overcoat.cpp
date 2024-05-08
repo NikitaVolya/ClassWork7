@@ -1,7 +1,12 @@
 #include "Overcoat.h"
 
 #include <conio.h>
-#include <iostream>
+
+
+Overcoat::Overcoat(Overcoat&& pOther) : producer(pOther.producer), size(pOther.size), price(pOther.size)
+{
+	pOther.producer = nullptr;
+}
 
 Overcoat::~Overcoat()
 {
@@ -74,4 +79,17 @@ Overcoat& Overcoat::operator=(const Overcoat& pOther)
 	setProducer(pOther.producer);
 
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream& out, Overcoat& overcoat)
+{
+
+	out << "( ";
+	if (overcoat.getProducer())
+		out << overcoat.getProducer();
+	else
+		out << "None";
+	out << " ) " << overcoat.getSize() << ' ' << overcoat.getPrice() << '$';
+
+	return out;
 }

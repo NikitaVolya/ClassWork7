@@ -18,15 +18,15 @@ int main()
 	test = a;
 	test = test;
 
-	std::cout << test.getProducer() << std::endl;
-	std::cout << a.getProducer() << std::endl;
+	std::cout << test << std::endl;
+	std::cout << a << std::endl;
 	std::cout << (a == test) << std::endl;
 
 	test.setProducer("Nike");
 	a.setProducer("H&M");
 
-	std::cout << test.getProducer() << std::endl;
-	std::cout << a.getProducer() << std::endl;
+	std::cout << test << std::endl;
+	std::cout << a << std::endl;
 
 
 	std::cout << "--------------------------------------------------------------------\n";
@@ -38,9 +38,7 @@ int main()
 	flatTree = flatOne;
 	flatTwo = flatTwo;
 
-	std::cout << flatOne.getFamily() << std::endl;
-	std::cout << flatTwo.getFamily() << std::endl;
-	std::cout << flatTree.getFamily() << std::endl;
+	std::cout << flatOne << std::endl;
 
 	std::cout << (flatOne > flatTwo) << " " << (flatOne > flatTree) << std::endl;
 	std::cout << (flatTree == flatOne) << " " << (flatTree == flatTwo) << std::endl;

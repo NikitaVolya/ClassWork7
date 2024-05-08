@@ -10,6 +10,11 @@ Flat::Flat(int pStage, float pArea, float pPrice, const char* pFamily) : stage(p
 	setFamily(pFamily);
 }
 
+Flat::Flat(Flat&& pOther) : stage(pOther.stage), area(pOther.area), price(pOther.price), family(pOther.family)
+{
+	pOther.family = nullptr;
+}
+
 Flat::~Flat()
 {
 	if (family)
@@ -72,4 +77,15 @@ Flat& Flat::operator=(const Flat& pOther)
 	setFamily(pOther.family);
 
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream& out, Flat& overcoat)
+{
+	out << overcoat.stage << ' ' << overcoat.area << ' ' << overcoat.price << " | ";
+	if (overcoat.family)
+		out << overcoat.family;
+	else
+		out << "None";
+
+	return out;
 }
